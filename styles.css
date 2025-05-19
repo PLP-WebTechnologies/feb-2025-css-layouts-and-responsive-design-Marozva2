@@ -1,0 +1,128 @@
+/* Ensure full-height layout */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* NAVIGATION */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* GRID LAYOUT */
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  flex: 1; /* Let main grow to push footer down */
+}
+
+.content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar {
+  background: #eaeaea;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+.footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .grid-container {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
